@@ -81,7 +81,7 @@ equal.addEventListener('click',(e)=>{
             currentNumber.innerText = result
             break;
         case "sqr2":
-            result = "error"
+            result = Math.sqrt(a)
             console.log(result)
             currentNumber.innerText = result
             break;
@@ -91,7 +91,7 @@ equal.addEventListener('click',(e)=>{
             currentNumber.innerText = result
             break;
         case "%":
-            result = "error"
+            result = a/100
             console.log(result)
             currentNumber.innerText = result
             break;
