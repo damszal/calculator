@@ -50,6 +50,8 @@ body{
     align-items:center;
 
     padding-right: 1.5rem;
+
+    min-height: 57.6px;
 }
 
 .currentSection > p {

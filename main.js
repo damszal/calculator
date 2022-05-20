@@ -10,27 +10,7 @@ let number = document.querySelectorAll('.number')
 let clear = document.querySelector('.clear')
 let equal = document.querySelector('.equal');
 
-//let pnValue = previousNumber.textContent;
-//let msValue = mathSign.textContent;
-//let cnValue = currentNumber.textContent
-
 let result = "";
-
-function operate(e){
-    let value = e.target.innerText;
-    let a = Number(currentNumber);
-    let b = Number(previousNumber)
-    switch(value){
-        case "+":
-            result = a + b
-            console.log(result)
-            break;
-        case "-":
-            result = a + b
-            console.log(result)
-            break;
-    }
-}
 
 operator.forEach((btn)=>{
    btn.addEventListener('click',(e)=>{
