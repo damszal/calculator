@@ -1,6 +1,11 @@
 // good example of calc and to lear how to buld a simple one
 // https://github.com/mateocode8933/Youtube-tutorials/blob/main/Kalkulator%20Javascript/main.js
 
+
+// NEXT TASKS:
+// fix the dot and 0.1+0.2 issues
+
+
 let previousNumber = document.querySelector('.previousNumber');
 let mathSign = document.querySelector('.mathSign');
 let currentNumber = document.querySelector('.currentNumber');
@@ -12,7 +17,7 @@ let equal = document.querySelector('.equal');
 
 let result = "";
 
-console.log(result);
+console.log(number);
 
 let showNumber = function(e){
     return currentNumber.innerText = currentNumber.innerText.replace("0","") + e.target.textContent
@@ -86,3 +91,4 @@ number.forEach((btn)=>{
 clear.addEventListener('click',clearDisplay);
 
 equal.addEventListener('click',calculateOperations);
+
