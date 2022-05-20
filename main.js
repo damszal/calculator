@@ -12,33 +12,29 @@ let equal = document.querySelector('.equal');
 
 let result = "";
 
-console.log(result)
+console.log(result);
 
-operator.forEach((btn)=>{
-   btn.addEventListener('click',(e)=>{
-       if(currentNumber.innerText ==="0") {
-           return
-       } else {
-        mathSign.textContent = e.target.textContent;
-        previousNumber.textContent = currentNumber.innerText;
-        currentNumber.innerText = "0"
-       }
-   } )
-});
+let showNumber = function(e){
+    return currentNumber.innerText = currentNumber.innerText.replace("0","") + e.target.textContent
+}
 
-number.forEach((btn)=>{
-    btn.addEventListener('click',(e)=>{
-        currentNumber.innerText = currentNumber.innerText.replace("0","") + e.target.textContent
-     } 
-    )})
+let operate = function(e){
+    if(currentNumber.innerText ==="0") {
+        return
+    } else {
+     mathSign.textContent = e.target.textContent;
+     previousNumber.textContent = currentNumber.innerText;
+     currentNumber.innerText = "0"
+}
+};
 
-clear.addEventListener('click',(e)=>{
+let clearDisplay = function(e) {
     currentNumber.innerText = "0";
     previousNumber.innerText = "0";
     mathSign.innerText = ""
-} );
+};
 
-equal.addEventListener('click',(e)=>{
+let calculateOperations = function(e) {
     let b = Number(currentNumber.innerText);
     let a = Number(previousNumber.innerText)
     switch(mathSign.textContent){
@@ -77,5 +73,16 @@ equal.addEventListener('click',(e)=>{
             console.log(result)
             currentNumber.innerText = result
             break;
-    } 
-} );
+    }};
+
+operator.forEach((btn)=>{
+   btn.addEventListener('click',operate)
+});
+
+number.forEach((btn)=>{
+    btn.addEventListener('click', showNumber)
+})
+
+clear.addEventListener('click',clearDisplay);
+
+equal.addEventListener('click',calculateOperations);
