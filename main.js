@@ -12,6 +12,8 @@ let equal = document.querySelector('.equal');
 
 let result = "";
 
+console.log(result)
+
 operator.forEach((btn)=>{
    btn.addEventListener('click',(e)=>{
        if(currentNumber.innerText ==="0") {
@@ -21,20 +23,20 @@ operator.forEach((btn)=>{
         previousNumber.textContent = currentNumber.innerText;
         currentNumber.innerText = "0"
        }
-    //mathSign.textContent = e.target.textContent
    } )
 });
 
 number.forEach((btn)=>{
     btn.addEventListener('click',(e)=>{
-    //     //let fVal = Number(e.target.textContent)
-        currentNumber.innerText = currentNumber.innerText + e.target.textContent
-    //     //result = fVal
-    //     //console.log(result)
+        currentNumber.innerText = currentNumber.innerText.replace("0","") + e.target.textContent
      } 
     )})
 
-//clear.addEventListener('click',cons );
+clear.addEventListener('click',(e)=>{
+    currentNumber.innerText = "0";
+    previousNumber.innerText = "0";
+    mathSign.innerText = ""
+} );
 
 equal.addEventListener('click',(e)=>{
     let b = Number(currentNumber.innerText);
